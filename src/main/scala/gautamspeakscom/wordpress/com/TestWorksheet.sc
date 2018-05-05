@@ -44,8 +44,18 @@ val line2 =
 println(line2)
 
 
+// variable substitution into strings
+
+val name = "Vikas"
+val age = 33
+val weigt = 75
+
+println(s"$name is $age years old and weighs $weigt kgs.")
+
+println(s"next year $name will be ${age + 1} years old.")
 
 
+// other interpolators --> s, f, raw
 
 
 // old stuff

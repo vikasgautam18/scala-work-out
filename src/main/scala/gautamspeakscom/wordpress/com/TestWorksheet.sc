@@ -1,4 +1,58 @@
+// 05-May-18
+
+//equate strings
+
+val a = "hello"
+val b = "hello"
+
+val c = "hell" + "o"
+
+c == a
+
+c == b
+
+c.toUpperCase == b.toUpperCase
+
+c.equalsIgnoreCase(b)
+a.equals(b)
+
+
+//Multiline String - stripmargin
+
+val line =
+  """hello to all of you
+    |who are looking at this code
+    |how are you doing?
+  """.stripMargin
+
+println(line)
+
+val line1 =
+  """hello to all of you
+    §who are looking at this code
+    §how are you doing?
+  """.stripMargin('§')
+
+println(line1)
+
+val line2 =
+  """hello to all of you
+    §who are "looking" at this 'code'
+    §how are you doing?
+  """.stripMargin('§')
+
+println(line2)
+
+
+
+
+
+
+// old stuff
+
 val res = f2(List(1, 2, 3, 4, 5, 6))
+
+
 
 def f1(delim: Int, arr: List[Int]): List[Int] = {
   arr.filter(_ < delim)

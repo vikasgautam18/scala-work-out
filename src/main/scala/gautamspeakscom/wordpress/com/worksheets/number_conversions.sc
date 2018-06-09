@@ -28,6 +28,12 @@ if(x == y) print("equal") else println("not equal")
 
 BigInt("1524157875019052100")
 
+val ax = Array("apple", "banana", "orange")
+
+
+for ((e, count) <- ax.zipWithIndex) {  println(s"$count is $e")}
+
+ax.foreach(println)
 
 
 

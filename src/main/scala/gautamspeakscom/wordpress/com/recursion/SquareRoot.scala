@@ -10,7 +10,7 @@ object SquareRoot{
   def abs(x: Double) = if(x > 0) x else -x
 
   def isGoodEnough(d: Double, guess: Double) : Boolean = {
-    abs(guess * guess - d) < 0.001
+    abs(guess * guess - d) / d  < 0.0001
   }
 
   def improve_guess(num: Double, guess: Double) : Double = {
@@ -19,7 +19,8 @@ object SquareRoot{
 
   def main(args: Array[String]): Unit = {
     println(newtons_way(2))
-
     println(newtons_way(19))
+    println(newtons_way(1e-6))
+    println(newtons_way(1e60))
   }
 }

@@ -108,3 +108,12 @@ def f(arr: List[Int]): List[Int] = arr.map(_.abs)
 
 
 val numbers = StdIn.readLine("enter the input stack of numbers comma separated: ").split(",").map(_.toInt)
+
+
+class Person(var name: String, var age: Int)
+
+val p: Person = new Person("vikas", 32)
+
+p.name = "gautam"
+println(p)
+

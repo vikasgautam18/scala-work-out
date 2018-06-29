@@ -1,3 +1,4 @@
+
 import scala.io.StdIn
 // 05-May-18
 
@@ -107,13 +108,13 @@ f4(List(1, 2, 3, 4, 5, 6, 7))
 def f(arr: List[Int]): List[Int] = arr.map(_.abs)
 
 
-val numbers = StdIn.readLine("enter the input stack of numbers comma separated: ").split(",").map(_.toInt)
+val numbers = StdIn.readLine("enter the input stack of numbers comma separated: ")
+  .split(",").map(_.toInt)
 
 
-class Person(var name: String, var age: Int)
 
-val p: Person = new Person("vikas", 32)
 
-p.name = "gautam"
-println(p)
+
+
+
 

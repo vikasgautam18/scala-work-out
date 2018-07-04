@@ -31,4 +31,38 @@ class Misc {
     }
     loop(a, 0)
   }
+
+  def sumCurr(f: Int => Int): (Int, Int) => Int = {
+    def sum(a: Int, b:Int): Int = {
+      if(a > b)
+        0
+      else
+        f(a) + sum(a+1, b)
+    }
+    sum
+  }
+
+  def sumCurrying(f: Int => Int)(a:Int, b:Int): Int = {
+    if(a > b)
+      0
+    else
+      f(a) + sumCurrying(f) (a+1, b)
+  }
+
+  def prod(f: Int => Int)(a: Int, b: Int) : Int = {
+    if(a > b)
+      1
+    else
+      f(a) * prod(f)(a+1, b)
+  }
+
+  def factorial(n: Int): Int = prod(x => x)(1, n)
+  def factGen(n: Int): Int = genericSumProd(x => x, (x, y) => x * y, 1)(1, n)
+
+  def genericSumProd(f: Int => Int, combine: (Int, Int) => Int, zero: Int)(a: Int, b: Int): Int = {
+    if(a > b)
+      zero
+    else
+      combine(f(a), genericSumProd(f, combine, zero)(a+1, b))
+  }
 }

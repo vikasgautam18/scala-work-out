@@ -17,4 +17,19 @@ class MiscTest extends FunSuite {
     assert(m.sumRange(x => x * x, 1, 10) === 385)
     assert(m.sumRange(x => x * x * x, 1, 5) === 225)
   }
+
+  test("testProd") {
+    assert(m.prod(x => x) (3, 4) === 12)
+    assert(m.prod(x => x)(3, 5) === 60)
+    assert(m.genericSumProd(x => x, (a, b) => a * b, 1)(3, 4) === 12)
+    assert(m.genericSumProd(x => x, (a, b) => a * b, 1)(3, 5) === 60)
+  }
+
+  test("testFactorial") {
+    assert(m.factorial(1) === 1)
+    assert(m.factorial(5) === 120)
+    assert(m.factGen(1) === 1)
+    assert(m.factGen(5) === 120)
+  }
+
 }

@@ -36,4 +36,16 @@ class MiscTest extends FunSuite {
     assert(m.kThElement(3, List(1, 2, 3, 4)) === 3)
   }
 
+  test("testPenultimate") {
+    assert(m.penultimate(List(1, 2, 0, 4, 3, 5)) === 3)
+  }
+
+  test("testNumberOfElements"){
+    assert(m.numElem(List(1, 2, 3, 4, 5)) === 5)
+  }
+
+  test("testReverse") {
+    assert(m.reverse(List(10, 20, 30, 40, 50)) === List(50, 40, 30, 20, 10))
+  }
+
 }

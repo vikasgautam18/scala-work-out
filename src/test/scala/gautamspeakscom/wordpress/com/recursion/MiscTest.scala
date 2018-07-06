@@ -32,4 +32,8 @@ class MiscTest extends FunSuite {
     assert(m.factGen(5) === 120)
   }
 
+  test("testKthElement") {
+    assert(m.kThElement(3, List(1, 2, 3, 4)) === 3)
+  }
+
 }

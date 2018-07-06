@@ -22,6 +22,23 @@ class Misc {
       last(l.tail)
   }
 
+  /**
+    *
+    * @param k - the element to check
+    * @param l - the list of number
+    * @return - the element at kth index
+    */
+  def kThElement(k: Int, l: List[Int]): Int = {
+    def loop(k: Int, l: List[Int], curr: Int): Int= {
+      if(k-1 == curr)
+        l(curr)
+      else
+        loop(k, l, curr + 1)
+    }
+    loop(k, l, 0)
+  }
+
+
   def sumRange(f: Int => Int, a: Int ,b: Int) : Int = {
     def loop(a: Int, acc: Int): Int = {
       if(a > b)
@@ -57,6 +74,7 @@ class Misc {
   }
 
   def factorial(n: Int): Int = prod(x => x)(1, n)
+
   def factGen(n: Int): Int = genericSumProd(x => x, (x, y) => x * y, 1)(1, n)
 
   def genericSumProd(f: Int => Int, combine: (Int, Int) => Int, zero: Int)(a: Int, b: Int): Int = {

@@ -25,4 +25,5 @@ class classic_examples {
 
     newtons_way(num)
   }
+
 }

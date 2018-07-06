@@ -48,4 +48,9 @@ class MiscTest extends FunSuite {
     assert(m.reverse(List(10, 20, 30, 40, 50)) === List(50, 40, 30, 20, 10))
   }
 
+  test("testPalindrome") {
+    assert(m.palindrome(List(10, 20, 30, 20, 10)) === true)
+    assert(m.palindrome(List(10, 20, 30, 40, 50)) === false)
+  }
+
 }

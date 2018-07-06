@@ -104,6 +104,28 @@ class Misc {
     loop(List(), l)
   }
 
+  /**
+    * Find out whether a list is a palindrome.
+    * Example:
+    * scala> isPalindrome(List(1, 2, 3, 2, 1))
+    * res0: Boolean = true
+    *
+    * @param l -> input list
+    * @return
+    */
+  def palindrome(l:List[Int]): Boolean = l == reverse(l)
+
+
+
+
+
+
+
+
+
+
+
+
   def sumCurr(f: Int => Int): (Int, Int) => Int = {
     def sum(a: Int, b:Int): Int = {
       if(a > b)

@@ -10,4 +10,8 @@ class FixedPointTest extends FunSuite {
     assert(FixedPoint.fixedPoint(x => 399 + x/2)(1) === 748.1875)
   }
 
+  test("testSqrt"){
+    assert(FixedPoint.sqrt(2) === 1.4142135623746899)
+  }
+
 }

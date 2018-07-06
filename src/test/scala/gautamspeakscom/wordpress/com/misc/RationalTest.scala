@@ -6,7 +6,7 @@ class RationalTest extends FunSuite {
 
   test("testAdd") {
 
-    assert(new Rational(1, 2).add(new Rational(1, 2)).equals(new Rational(4, 4)))
+    assert(new Rational(1, 2).add(new Rational(1, 2)).equals(new Rational(1, 1)))
     assert(new Rational(1, 4).add(new Rational(2, 3)).equals(new Rational(11, 12)))
   }
 

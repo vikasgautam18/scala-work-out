@@ -2,8 +2,12 @@ package gautamspeakscom.wordpress.com.misc
 
 class Rational(x: Int, y: Int) {
 
-  val numerator = x
-  val denominator = y
+  private def gcd (x: Int, y: Int) : Int = {
+    if(y == 0) x else gcd(y, x % y)
+  }
+  private val g = gcd(x, y)
+  val numerator = x / g
+  val denominator = y / g
 
   def add(num: Rational): Rational = {
     new Rational(

@@ -53,4 +53,12 @@ class MiscTest extends FunSuite {
     assert(m.palindrome(List(10, 20, 30, 40, 50)) === false)
   }
 
+  test("testRemoveAt") {
+    assert(m.removeAt[Int](2, List(10, 20, 30, 20, 10)) === List(10, 20, 20, 10))
+  }
+
+  test("testFlatten") {
+    assert(m.flatten(List(List(1, 1), 2, List(3, List(5, 8)))) === List(1, 1, 2, 3, 5, 8))
+  }
+
 }

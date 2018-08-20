@@ -115,17 +115,6 @@ class Misc {
     */
   def palindrome(l:List[Int]): Boolean = l == reverse(l)
 
-
-
-
-
-
-
-
-
-
-
-
   def sumCurr(f: Int => Int): (Int, Int) => Int = {
     def sum(a: Int, b:Int): Int = {
       if(a > b)
@@ -159,5 +148,14 @@ class Misc {
       zero
     else
       combine(f(a), genericSumProd(f, combine, zero)(a+1, b))
+  }
+
+  def removeAt[T](n: Int, xs: List[T]): List[T] = xs.take(n) ++ xs.drop(n+1)
+
+
+  def flatten(xs: List[Any]): List[Any] = xs match {
+    case Nil => Nil
+    case (head: List[_]) :: tail => flatten(head) ++ flatten(tail)
+    case head :: tail => head :: flatten(tail)
   }
 }

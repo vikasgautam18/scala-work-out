@@ -61,4 +61,11 @@ class MiscTest extends FunSuite {
     assert(m.flatten(List(List(1, 1), 2, List(3, List(5, 8)))) === List(1, 1, 2, 3, 5, 8))
   }
 
+  test("squareList") {
+    assertResult(List(1, 4, 9, 16, 25, 36))(m.squareList(List(1, 2, 3, 4, 5, 6)))
+  }
+
+  test("squareListWithMap") {
+    assertResult(List(1, 4, 9, 16, 25, 36))(m.squareListWithMap(List(1, 2, 3, 4, 5, 6)))
+  }
 }

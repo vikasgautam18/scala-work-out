@@ -158,4 +158,19 @@ class Misc {
     case (head: List[_]) :: tail => flatten(head) ++ flatten(tail)
     case head :: tail => head :: flatten(tail)
   }
+
+  def squareList(xs: List[Int]): List[Int] =
+    xs match {
+      case Nil => xs
+      case y :: ys => y * y :: squareList(ys)
+    }
+
+  def squareListWithMap(xs: List[Int]): List[Int] =
+    xs.map(elem => elem * elem)
+
+
+  def pack[T](xs: List[T]): List[List[T]] = xs match {
+    case Nil => Nil
+    case x :: xs1 => ???
+  }
 }

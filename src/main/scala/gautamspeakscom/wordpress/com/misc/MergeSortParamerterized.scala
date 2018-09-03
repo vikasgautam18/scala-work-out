@@ -1,9 +1,9 @@
 package gautamspeakscom.wordpress.com.misc
 
-object MergeSort {
+object MergeSortParamerterized {
 
 
-  def msort(list: List[Int]): List[Int] = {
+  def msort[T](list: List[T])(implicit ord: Ordering[T]): List[T] = {
     // define number to be split at
 
     val n = list.length/2
@@ -19,21 +19,23 @@ object MergeSort {
     }
   }
 
-  def merge(xs: List[Int], ys: List[Int]): List[Int] = {
+  def merge[T](xs: List[T], ys: List[T])(implicit ord: Ordering[T]) : List[T] = {
     (xs, ys) match {
       case (Nil, ys) => ys
       case (xs, Nil) => xs
       case (x :: xs1, y :: ys1) => {
-        if(x > y) y :: merge(xs, ys1)
-        else x :: merge(xs1, ys)
+        if(ord.lt(x,y)) x :: merge(xs1, ys)
+        else y :: merge(xs, ys1)
       }
     }
   }
 
   def main(args: Array[String]): Unit = {
     val l = msort(List(1, 4, -4, 2, 9, 8, 12, -5))
+    val strList = msort(List("Frankfurt", "Berlin", "Stuttgart", "Karlsruhe"))
 
     println(l)
+    println(strList)
   }
 
 }

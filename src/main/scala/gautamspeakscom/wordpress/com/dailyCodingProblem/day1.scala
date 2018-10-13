@@ -1,5 +1,6 @@
 package gautamspeakscom.wordpress.com.dailyCodingProblem
 
+import scala.collection.mutable
 import scala.collection.mutable.Queue
 import scala.collection.mutable.Stack
 
@@ -33,10 +34,10 @@ object day1 {
   }
 
   def interleaf(numbers: List[Int]): List[Int] = {
-    val stackNum = Stack[Int]()
+    val stackNum = mutable.Stack[Int]()
     numbers.foreach(num => stackNum.push(num))
 
-    var q = new Queue[Int]()
+    val q = new mutable.Queue[Int]()
     numbers.foreach(num => q.enqueue(num))
 
     val isEven = numbers.length % 2 == 0

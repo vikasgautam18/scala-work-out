@@ -1,6 +1,8 @@
 package gautamspeakscom.wordpress.com.dailyCodingProblem
 
-import scala.io.StdIn
+import scala.collection.mutable.Queue
+import scala.collection.mutable.Stack
+
 
 //noinspection SpellCheckingInspection
 object day1 {
@@ -30,4 +32,25 @@ object day1 {
     res.reverse
   }
 
+  def interleaf(numbers: List[Int]): List[Int] = {
+    val stackNum = Stack[Int]()
+    numbers.foreach(num => stackNum.push(num))
+
+    var q = new Queue[Int]()
+    numbers.foreach(num => q.enqueue(num))
+
+    val isEven = numbers.length % 2 == 0
+    val iter =  if(isEven) numbers.length/2 -1 else numbers.length/2
+
+    var res = List[Int]()
+
+    for(i <- 0 to iter){
+      if(i == iter && !isEven)
+        res = stackNum.pop() :: res
+      else
+        res = stackNum.pop() :: q.dequeue() :: res
+    }
+
+    res.reverse
+  }
 }

@@ -4,7 +4,7 @@ object StringPlusPlus {
 
   implicit class Utils(s: String){
 
-    def increment = for (c <- s) yield (c+1).toChar
+    def increment: String = for (c <- s) yield (c+1).toChar
 
   }
 }

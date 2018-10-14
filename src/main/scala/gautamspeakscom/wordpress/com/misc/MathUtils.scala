@@ -2,7 +2,7 @@ package gautamspeakscom.wordpress.com.misc
 
 object MathUtils {
 
-    implicit def ~=(x: Double, y: Double, precision: Double) = {
+    implicit def ~=(x: Double, y: Double, precision: Double): Boolean = {
       if ((x - y).abs < precision) true else false }
 
 

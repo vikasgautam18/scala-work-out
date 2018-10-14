@@ -28,7 +28,7 @@ object Currying {
     loop(a, 0)
   }
 
-  def add(a: Int, b: Int) = a + b
+  def add(a: Int, b: Int): Int = a + b
 
   def sumOfSquares(a: Int, b: Int): Int = {
     def loop(a: Int, sum: Int): Int = {
@@ -40,7 +40,7 @@ object Currying {
     loop(a, 0)
   }
 
-  def square(a: Int) = a * a
+  def square(a: Int): Int = a * a
 
   def sumOfCubes(a: Int, b: Int): Int = {
     def loop(a: Int, sum: Int): Int = {
@@ -52,7 +52,7 @@ object Currying {
     loop(a, 0)
   }
 
-  def cube(a: Int) = a * a * a
+  def cube(a: Int): Int = a * a * a
 
   def sumOfFactorials(a: Int, b: Int): Int = {
     def loop(a: Int, sum: Int): Int = {

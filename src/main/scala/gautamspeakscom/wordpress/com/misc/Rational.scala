@@ -6,8 +6,8 @@ class Rational(x: Int, y: Int) {
     if(y == 0) x else gcd(y, x % y)
   }
   private val g = gcd(x, y)
-  val numerator = x / g
-  val denominator = y / g
+  val numerator: Int = x / g
+  val denominator: Int = y / g
 
   def add(num: Rational): Rational = {
     new Rational(
@@ -24,6 +24,6 @@ class Rational(x: Int, y: Int) {
   override def toString: String = numerator + "/" + denominator
 
   def equals(that: Rational): Boolean = {
-    (that.numerator == numerator && that.denominator == denominator)
+    that.numerator == numerator && that.denominator == denominator
   }
 }

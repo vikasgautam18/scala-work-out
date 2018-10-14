@@ -23,10 +23,9 @@ object MergeSortParamerterized {
     (xs, ys) match {
       case (Nil, ys) => ys
       case (xs, Nil) => xs
-      case (x :: xs1, y :: ys1) => {
+      case (x :: xs1, y :: ys1) =>
         if(ord.lt(x,y)) x :: merge(xs1, ys)
         else y :: merge(xs, ys1)
-      }
     }
   }
 

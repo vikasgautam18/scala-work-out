@@ -4,8 +4,8 @@ object IntegerPlusPlus {
 
   implicit class Utils(s: Int){
 
-    def increment = s + 1
-    def decrement = s - 1
+    def increment: Int = s + 1
+    def decrement: Int = s - 1
 
   }
 }

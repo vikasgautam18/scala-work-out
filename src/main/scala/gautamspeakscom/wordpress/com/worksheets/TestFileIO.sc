@@ -47,13 +47,13 @@ def replaceComma (line: String, replacement: String): String = {
 
 def randomAlphaNumericString(length: Int): String = {
   //val chars = ('a' to 'z') ++ ('A' to 'Z') ++ ('0' to '9')
-  val chars = ('0' to '9')
+  val chars = '0' to '9'
   randomStringFromCharList(length, chars)
 }
 
 def randomStringFromCharList(length: Int, chars: Seq[Char]): String = {
   val sb = new StringBuilder
-  for (i <- 1 to length) {
+  for (_ <- 1 to length) {
     val randomNum = util.Random.nextInt(chars.length)
     sb.append(chars(randomNum))
   }

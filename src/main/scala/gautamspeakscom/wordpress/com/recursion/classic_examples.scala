@@ -6,7 +6,7 @@ class classic_examples {
     if(y == 0) x else gcd(y, x % y)
   }
 
-  def sqrt(num: Double) = {
+  def sqrt(num: Double): Double = {
 
     def newtons_way(guess: Double = 1) : Double = {
       if(isGoodEnough(guess)) guess
